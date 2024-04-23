@@ -3,9 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contacto</title>
+    <link rel="stylesheet" href="../CSS/contacto.css">
 </head>
 <body>
-    <h1>contacto</h1>
+
+    <main>
+        <div class="contenedor">
+            <form >
+                <h2>Formulario de Contacto</h2>
+                <fieldset>
+                    <legend>INFORMACIÓN DE CONTACTO</legend>
+                    <div class="input-box">
+                        <label for="nombre">Nombre
+                            <input type="text" id="nombre" placeholder="Juan" required>
+                        </label>
+                    </div>
+                    <div class="input-box">
+                        <label for="apellido">Apellido
+                            <input type="text" id="apellido" placeholder="Perez" required>
+                        </label>
+                    </div>
+                    <div class="input-box">
+                        <label for="numero">Telefono
+                            <input type="number" id="numero" placeholder="114565856" required>
+                        </label>
+                    </div>
+                    <div class="input-box">
+                        <label for="email">Email
+                            <input type="email" id="email" placeholder="juanperez@gmail.com" required>
+                        </label>
+                    </div>
+            </fieldset>
+                <div class="input-box">
+                    <label for="check">Puedes enviarme novedades
+                        <input type="checkbox" class="checkbox" id="check">
+                    </label>
+                </div>
+                
+             
+
+            </form>
+        </div>
+
+
+    </main>
+    
 </body>
 </html>

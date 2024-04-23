@@ -1,0 +1,94 @@
+body{
+    margin: 0;
+    background: url("..\img\logos\img.jpg");
+    background-repeat:repeat;
+    background-size: 100%;
+    font-family: sans-serif;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+form{
+    
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 20px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    padding: 40px 0;
+    max-width: 900px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    color: #ddd;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.input-box {
+    margin: 15px 20px;
+}
+
+input{
+    background-color:transparent;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px 12px;
+    border: 3px solid rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    color:#ddd;
+    
+    
+}
+
+input::placeholder{
+    color: rgba(237, 237, 237,0.2);
+}
+input:focus {
+    outline: none !important;
+    border:3.2px solid rgba(87, 48, 155,0.5);
+    box-shadow: 0 0 10px rgba(164, 119, 243,0.5);
+  }
+
+  /* Para eliminar los botos de arriba y abajo de un input tipo number */
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+  }
+  
+  input[type=number] {
+     appearance:textfield; }
+/* fin de la edicion del input tipo number */
+
+label{
+    color: #ddd;
+    font-size: 0.9em;
+    line-height: 2;
+    margin-left: 2px;
+    
+}
+
+.checkbox{
+    width: auto;
+    height: 10px;
+    accent-color: #BC7AFE;
+    
+}
+fieldset{
+    border-radius: 5px;
+    border: 3px solid rgba(0, 0, 0, 0.15);
+    padding: 0 20px 20px 20px;
+    margin: 20px;
+}
+legend{
+    padding: 0 6px;
+    font-family: sans-serif;
+    color:rgba(0, 0, 0, 0.3);;
+}
