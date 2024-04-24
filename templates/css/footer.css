@@ -29,12 +29,8 @@ ul{
     bottom: 0;
     unicode-bidi: isolate;
     width: 100%;
-<<<<<<< HEAD
     
     /* background: rgb(2,0,36); */
-=======
-    background: rgb(2,0,36); 
->>>>>>> emma
     background: linear-gradient(360deg, rgba(2,0,36,1) 27%, rgba(58,9,121,1) 73%, rgba(124,0,255,1) 100%);
     padding: 70px 0;
 }

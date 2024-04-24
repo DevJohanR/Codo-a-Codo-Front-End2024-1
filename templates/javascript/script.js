@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
      logoContainerMobile.style.display = 'none'; // Oculto inicialmente
      
      // Configuración de la imagen del logo para escritorio
-     logoNTFS.src = './templates/img/logos/logoNTFS.webp';
+     logoNTFS.src = './templates/img\\logos/logoNTFS.web';
      logoNTFS.style.width = '100px'; // Tamaño de tu logo para escritorio
 
 // Configuración del contenedor del logo para escritorio
@@ -45,7 +45,6 @@ logoContainerPc.appendChild(logoNTFS.cloneNode()); // Clona el logo para usarlo 
 logoContainerPc.style.display = 'none'; // Oculto inicialmente
 logoContainerPc.style.width = '150px'; // Tamaño del contenedor para escritorio
 logoContainerPc.style.height= '80px'
-logoContainerPc.style.backgroundColor = 'yellow'; // Solo para fines de visualización
 
 
 
