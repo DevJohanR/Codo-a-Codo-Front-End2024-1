@@ -130,6 +130,6 @@ legend{
 }
 
 .btn-hover.btn-color {
-    background-image: linear-gradient(to right, #7c00ff , #3a0979 , #7c00ff , #020024);
+    background-image: linear-gradient(to left, #7c00ff , #3a0979 , #7c00ff , #020024);
     box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
 }
