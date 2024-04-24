@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
 body{
   line-height: 1.5;
   font-family: 'Poppins', sans-serif;
@@ -27,6 +29,7 @@ ul{
     bottom: 0;
     unicode-bidi: isolate;
     width: 100%;
+    
     /* background: rgb(2,0,36); */
     background: linear-gradient(360deg, rgba(2,0,36,1) 27%, rgba(58,9,121,1) 73%, rgba(124,0,255,1) 100%);
     padding: 70px 0;
