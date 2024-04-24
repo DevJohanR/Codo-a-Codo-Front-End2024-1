@@ -4,13 +4,17 @@ html{
 
 body{
     margin: 0;
-    background: url("..\img\logos\img.jpg");
+    background: url("../img\\logos/img.jpg");
     background-repeat:repeat;
     background-size: 100%;
     font-family: sans-serif;
+<<<<<<< HEAD
     padding-left: 10px;
     padding-right: 10px;
     width: 100%;
+=======
+    
+>>>>>>> emma
 }
 
 form{
@@ -25,6 +29,7 @@ form{
     max-width: 900px;
     margin: auto;
     margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 h2{
@@ -96,4 +101,45 @@ legend{
     padding: 0 6px;
     font-family: sans-serif;
     color:rgba(0, 0, 0, 0.3);;
+}
+
+.btn {
+    margin: 2%;
+    text-align: center;
+}
+
+.btn-hover {
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+
+    border-radius: 50px;
+    transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:hover {
+    background-position: 100% 0;
+    transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+    outline: none;
+}
+
+.btn-hover.btn-color {
+    background-image: linear-gradient(to right, #7c00ff , #3a0979 , #7c00ff , #020024);
+    box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
 }
