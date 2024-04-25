@@ -141,3 +141,10 @@ legend{
     background-image: linear-gradient(to left, #7c00ff , #3a0979 , #7c00ff , #020024);
 
 }
+
+@media(max-width: 574px){
+    .form {
+        margin: 0 20px;
+    }
+  
+  }
