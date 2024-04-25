@@ -1,9 +1,12 @@
 body{
-    margin: 0;
+   
     background: url("../img\\logos/img.jpg");
-    background-repeat:repeat;
-    background-size: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    height: 100%;
     font-family: sans-serif;
+    
     
 }
 
