@@ -23,7 +23,7 @@ ul{
 }
 .footer{
     
-    
+    box-shadow: 0px -10px 25px 0px rgba(0,0,0,0.5);
     bottom: 0;
     unicode-bidi: isolate;
     width: 100%;
