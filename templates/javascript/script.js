@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Manejar la visibilidad del menú según el tamaño de pantalla
     function updateMenuStyle(e) {
         if (e.matches) { // Si el ancho de pantalla es mayor a 600px
-            ul.style.backgroundColor = '#fff';
+            ul.style.backgroundColor = '#fff';/*linear-gradient(360deg, rgba(2, 0, 36, 1) 27%, rgba(58, 9, 121, 1) 73%, rgba(124, 0, 255, 1) 100%) */
             ul.style.display = 'flex';
             
             ul.style.justifyContent = 'center';
