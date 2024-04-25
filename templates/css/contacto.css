@@ -96,6 +96,7 @@ legend{
 .btn {
     margin: 2%;
     text-align: center;
+   
 }
 
 .btn-hover {
@@ -109,7 +110,7 @@ legend{
     text-align:center;
     border: none;
     background-size: 300% 100%;
-
+   
     border-radius: 50px;
     transition: all .4s ease-in-out;
     -o-transition: all .4s ease-in-out;
@@ -118,18 +119,22 @@ legend{
 }
 
 .btn-hover:hover {
+    box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
     background-position: 100% 0;
-    transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
+    transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    
+   
 }
 
 .btn-hover:focus {
     outline: none;
+    
 }
 
 .btn-hover.btn-color {
     background-image: linear-gradient(to left, #7c00ff , #3a0979 , #7c00ff , #020024);
-    box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
+
 }
