@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', function() {
     ul.style.alignItems = 'center';  // Alinea los ítems verticalmente al centro
     ul.style.justifyContent = 'center';  // Alinea los ítems horizontalmente al centro
     ul.style.width = '100%';  // Asegura que ul tome todo el ancho disponible
-    
-
+    ul.style.background = 'linear-gradient(360deg, rgba(2, 0, 36, 1) 27%, rgba(58, 9, 121, 1) 73%, rgba(124, 0, 255, 1) 100%)';
+ul.style.color = 'white'
     // Añadir los items del menú
     const items = ['Inicio', 'Explorar', 'Autores', 'Contacto'];
     items.forEach(item => {
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Manejar la visibilidad del menú según el tamaño de pantalla
     function updateMenuStyle(e) {
         if (e.matches) { // Si el ancho de pantalla es mayor a 600px
-            ul.style.backgroundColor = '#fff';
+            
             ul.style.display = 'flex';
             
             ul.style.justifyContent = 'center';
