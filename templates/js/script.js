@@ -83,5 +83,19 @@ ul.style.color = 'white'
 
 
 
+//DETALLES.HTML
 
+// Selección del elemento que activará el zoom al pasar el ratón
+var disparadorDemoDetalles = document.querySelector('.disparadorDemoDetalles');
+
+// Selección del contenedor donde se mostrará la ventana del zoom
+var detalleDetalles = document.querySelector('.detalleDetalles');
+
+// Instancia de Drift para agregar la funcionalidad de zoom
+/*new Drift(disparadorDemoDetalles, {
+  paneContainer: detalleDetalles,
+  inlinePane: false,
+  hoverBoundingBox: true
+});
+*/
 
