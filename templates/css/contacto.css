@@ -7,6 +7,15 @@ body{
     
 }
 
+
+main .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center center;
+    padding: 60px 40px;
+    
+}
+
 form{
     
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
@@ -15,20 +24,18 @@ form{
     border-radius: 20px;
     border:1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    padding: 40px 0;
-    max-width: 900px;
-    margin: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    padding: 20px 0;
+
+    
 }
 
-h2{
+h1{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 30px;
     color: #ddd;
     text-align: center;
     margin: 0;
-    margin-bottom: 10px;
+    
 }
 
 .input-box {
@@ -38,17 +45,18 @@ h2{
 input{
     background-color:transparent;
     width: 100%;
+    
     box-sizing: border-box;
     padding: 6px 12px;
     border: 3px solid rgba(0, 0, 0, 0.15);
     border-radius: 6px;
     color:#ddd;
-    
+    font-size: 1.1em;
     
 }
 
 input::placeholder{
-    color: rgba(237, 237, 237,0.2);
+    color: rgba(37, 37, 37,0.6);
 }
 input:focus {
     outline: none !important;
@@ -57,12 +65,6 @@ input:focus {
   }
 
   /* Para eliminar los botos de arriba y abajo de un input tipo number */
-  input[type=number]::-webkit-inner-spin-button, 
-  input[type=number]::-webkit-outer-spin-button { 
-    -webkit-appearance: none; 
-    margin: 0; 
-  }
-  
   input[type=number] {
      appearance:textfield; }
 /* fin de la edicion del input tipo number */
@@ -72,76 +74,87 @@ label{
     font-size: 0.9em;
     line-height: 2;
     margin-left: 2px;
+    font-size: 1.2em;
     
 }
 
 .checkbox{
+    margin: 0;
     width: auto;
-    height: 10px;
+    height: 20px;
     accent-color: #BC7AFE;
+    margin-left: 10px;
     
 }
 fieldset{
+    display: flex;
+    flex-direction: column;
+    align-items: center center;
+    justify-content: center;
+    min-height: 60vh;
     border-radius: 5px;
     border: 3px solid rgba(0, 0, 0, 0.15);
     padding: 0 20px 20px 20px;
-    margin: 20px;
+    margin: 30px;
+  
+
 }
 legend{
     padding: 0 6px;
     font-family: sans-serif;
+    font-weight: bold;
     color:rgba(0, 0, 0, 0.3);;
 }
 
+
 .btn {
-    margin: 2%;
-    text-align: center;
-   
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 30px;
 }
 
-.btn-hover {
-    width: 200px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #fff;
-    cursor: pointer;
-    margin: 20px;
-    height: 55px;
-    text-align:center;
+button{
     border: none;
-    background-size: 300% 100%;
-   
-    border-radius: 50px;
-    transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
-}
-
-.btn-hover:hover {
-    box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
-    background-position: 100% 0;
-    transition: all .5s ease-in-out;
-    -o-transition: all .5s ease-in-out;
-    -webkit-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out;
+    background-image: linear-gradient(0deg, rgba(2,0,36,1) 27%, rgba(58,9,121,1) 73%, rgba(124,0,255,1) 100%);
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 50px;
+    font-size: 20px;
+    padding: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  button span{
+    background-color: #111;
+    padding: 7px 40px;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-size: 25px;
+  }
+  
+  button:hover span {
+    background:none ;
     
-   
-}
-
-.btn-hover:focus {
-    outline: none;
     
-}
-
-.btn-hover.btn-color {
-    background-image: linear-gradient(to left, #7c00ff , #3a0979 , #7c00ff , #020024);
-
-}
+  }
+  button:hover {
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2)
+  }
+  
+  button:active {
+    transform: scale(0.9);
+    
+  }
 
 @media(max-width: 574px){
     .form {
         margin: 0 20px;
     }
-  
+    
   }
