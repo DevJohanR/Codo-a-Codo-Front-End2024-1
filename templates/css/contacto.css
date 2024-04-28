@@ -64,6 +64,8 @@ input:focus {
     box-shadow: 0 0 10px rgba(164, 119, 243,0.5);
   }
 
+
+  
   /* Para eliminar los botos de arriba y abajo de un input tipo number */
   input[type=number] {
      appearance:textfield; }
