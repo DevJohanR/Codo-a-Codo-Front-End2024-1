@@ -1,203 +1,493 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img\\logos/img.jpg");
+  background-size: cover;
+  z-index: -1;
 }
 
-.menu-icon {
-    cursor: pointer;
-    font-size: 24px;
-    user-select: none;
+header {
+    display: block;
+    unicode-bidi: isolate;
 }
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav li {
-    padding: 8px;
-    border-bottom: 1px solid #ccc;
-}
-
-/* Estilos adicionales para la visualización en móviles */
-@media (max-width: 600px) {
-    nav ul {
-        background-color: #f4f4f4;
-        margin: 0;
-        width: 100%;
-    }
-}
-
-/* Services Section */
- .services .heading {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-gap: 2em;  
- }
-
- .cards {
+/*Primera mitad*/
+.containerInfo {
+    width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2em;
-    margin: 10em 0 4em 0;
- }
+    background-color: rgba(38, 14, 61, 0.673);
+    height: 100%;
+    padding-bottom: 5vh;
+  }
 
- .services .card {
-    padding: 1em;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.5);
-    background: rgba(127, 127, 127, 0.25);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    position: relative;
- }
+  .infoTitulo {
+    display: inline-block;
+    width: 50%;
+    height: 200px;
+    padding: 20px;
+    text-align: left;
+    color: rgb(217, 217, 217);
+  }
 
- .services .card img {
-    width: 8em;
-    margin: -5em 0 1em 0;
- }
+  #tituloinfo {
+        font-size: 6.5vh;
+        padding: 10px;
+        border-bottom: 3px solid rgba(178, 41, 252, 0.663);
+        margin-right: 10vh;
+  }
 
- .services .card .light {
-    background: #48fc8b;
-    width: 6em;
-    height: 6em;
-    border-radius: 50%;
-    position: absolute;
-    top: -2em;
-    left: 50%;
-    transform: translate(-50%);
-    filter: blur(15px);
-    z-index: -1;
- }
+  @media (max-width:920px) {
+    .containerInfo {
+      height: 100%;
+      width: 100%;
+      padding-bottom: 5%;
+    }
+
+    #tituloinfo{
+        font-size: 3vh;
+        margin-top: -20px;
+    }
+
+    #parrafoinfo{
+        font-size: 1vh;
+        margin-left: 1vh;
+        width: 100%;
+        margin-top: -15px;
+    }
+
+    .containertarj{
+      padding-top: 70%;
+
+    }
+
+    .container{
+      padding-top: 20%;
+    }
+    .imgInfo{
+      margin-top: -10vh;
+      width: 1px;
+      height: auto;
+      margin-left: 19vh;
+    }
+
+  }
+
+  @media (max-width:1500px) {
+    #tituloinfo{
+        font-size: 5vh;
+        
+    }
+    .containerInfo {
+        height: 100%;
+        width: 100%;
+        padding-bottom: 5%;
+      }
+      #parrafoinfo{
+        font-size: 1.5vh;
+        margin-left: 1vh;
+        width: 100%;
+        margin-top: -30px;
+        padding-top: 20vh;
+
+    }
+    .containertarj{
+      padding-top: 7%;
+    }
+
+    .imgInfo{
+      margin-top: -10vh;
+      width: 10%;
+      margin-left: 19vh;
+    }
+
+  }
+#parrafoinfo{
+
+    text-align: left;
+    font-size: 2.5vh;
+    width: 100%;
+    height: 100%;
+    padding-top: 10vh;
+    text-align: left;
+    color: white;
+  }
+/*tarjetas con iconos*/
+  .containertarj{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 7%;
+  }
+  .container {
+  color: rgb(255, 255, 255);
+  position: relative;
+  font-family: sans-serif;
+ 
+}
+
+.container::before {
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  top: 30%;
+  right: 7%;
+}
+
+.container .box {
+  width: 50vh;
+  height: 15.875em;
+  padding: 1rem;
+  background-color:rgba(38, 14, 61, 0.283);
+  border: 1px solid rgba(255, 255, 255, 0.222);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: 0.7rem;
+  transition: all ease 0.3s;
+}
+
+.container .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container .box .title {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+.container .box div strong {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.container .box div p {
+  margin: 0;
+  font-size: 0.9em;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+}
+
+.container .box div span {
+  font-size: 0.7rem;
+  font-weight: 300;
+}
+
+.container .box div span:nth-child(3) {
+  font-weight: 500;
+  margin-right: 0.2rem;
+}
+
+.container .box {
+  box-shadow: 0px 0px 20px 1px #ffbb763f;
+  border: 1px solid rgba(255, 255, 255, 0.454);
+}
+
+.imgInfo{
+  margin-top: -10vh;
+  width: 30%;
+  margin-left: 35%;
+
+}
+
+.tittle {
+  font-size: 48px;
+  color: #ffffff;
+  text-shadow: 0 0 10px #b300ff;
+  text-align: center;
+}
+
+.parrafoTarj{
+  text-align: center;
+}
+
+/*sector artistas*/
+
+.artists{
+  margin-top: 7%;
+  background-color: rgb(49, 16, 79);
+}
+
+#tittleArtist{
+  font-size: 48px;
+  color: #ffffff;
+  text-shadow: 0 0 10px #00d5ff;
+  animation: relucirArt 1.5s infinite alternate;
+  text-align: center;
+}
+
+@keyframes relucirArt {
+  0% {
+    text-shadow: 0 0 10px #e100ff;
+  }
+  50% {
+    text-shadow: 0 0 20px rgb(255, 108, 243);
+  }
+  100% {
+    text-shadow: 0 0 10px #ff00cc;
+  }
+}
+
+.services .heading {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 2em;  
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  margin: 10em 0 4em 0;
+  color: white;
+}
+
+.services .card {
+  padding: 1em;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  background: rgba(127, 127, 127, 0.25);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  position: relative;
+}
+
+.services .card img {
+  width: 8em;
+  margin: -5em 0 1em 0;
+}
+
+.services .card .light {
+  background: #48fc8b;
+  width: 6em;
+  height: 6em;
+  border-radius: 50%;
+  position: absolute;
+  top: -2em;
+  left: 50%;
+  transform: translate(-50%);
+  filter: blur(15px);
+  z-index: -1;
+}
 
 /*Adding light color for all cards*/
 .services .card:nth-child(1) .light {
-    background: #bcb83d;
+  background: #bcb83d;
 }
 
 .services .card:nth-child(2) .light {
-    background: #6e3dbc;
+  background: #6e3dbc;
 }
 
 .services .card:nth-child(3) .light {
-    background: #ef3636;
+  background: #ef3636;
+}
+.services .heading {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 2em;  
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  margin-top: -2vh;
+  
+}
+.card {
+
+  padding-left: 50vh;
+  height: 75%;
+  overflow: hidden;
+}
+.services .card {
+  padding-left: 20vh;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  background: rgba(127, 127, 127, 0.25);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  position: relative;
+
+ 
+}
+
+.services .card img {
+  width: 8em;
+  margin: -5em 0 1em 0;
+}
+
+.services .card .light {
+  background: #48fc8b;
+  width: 6em;
+  height: 6em;
+  border-radius: 50%;
+  position: absolute;
+  top: -2em;
+  left: 50%;
+  transform: translate(-50%);
+  filter: blur(15px);
+  z-index: -1;
+}
+
+/*Adding light color for all cards*/
+.services .card:nth-child(1) .light {
+  background: #bcb83d;
+}
+
+.services .card:nth-child(2) .light {
+  background: #6e3dbc;
+}
+
+.services .card:nth-child(3) .light {
+  background: #ef3636;
 }
 
 /* Artists Section */
 .artists, .trial {
-    text-align: center;
+  text-align: center;
 }
 
 .artists .heading p {
-    margin: 3em auto;
-    max-width: 700px;
+  margin: 3em auto;
+  max-width: 700px;
 }
 
 .artists .card {
-    margin: 6em 0 4em 0;
-    flex-wrap: wrap;
+  margin: 6em 0 4em 0;
+  flex-wrap: wrap;
 }
 
 .artists .card {
-    border: 1px #42a3c3 solid;
-    background: radial-gradient(
-        rgb(17, 68, 96),
-        rgba(17, 68, 96, 0.5)
-    );
-    border-radius: 10px;
-    position: relative;
-    padding: 7em 1em 1em 1em;
-    max-width: 16em;
+  border: 1px #42a3c3 solid;
+  background: radial-gradient(
+      rgb(17, 68, 96),
+      rgba(17, 68, 96, 0.5)
+  );
+  border-radius: 10px;
+  position: relative;
+  padding: 7em 1em 1em 1em;
+  max-width: 16em;
 }
 
 .artists .bg-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 0;
-    border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+  border-radius: 10px;
 }
 
 .artists .profile-img {
-    width: 5em;
-    position: relative;
-    border: 0.5em rgb(17, 68, 96) solid;
-    border-radius: 50%;
-    margin-bottom: 1em;
+  width: 75%;
+  position: relative;
+  border: 0.5em rgb(17, 68, 96) solid;
+  border-radius: 50vh;
+  margin-top: -8vh;
+  margin-bottom: 1em;
+  align-items: center;
 }
 
 .artists .card p {
-    margin: 1em 0 1.5em 0;
+  margin: 1em 0 1.5em 0;
 }
 
 .stars {
-    color: #ffb92d;
+  color: #ffb92d;
 }
 
 .card-btn {
-    background: none;
-    border: 1px #284b60 solid;
-    width: 100%;
-    padding: 1em 0;
-    border-radius: 10px;
-    color: #eee;
-    cursor: pointer;
-    transition: 0.3s;
+  background: none;
+  border: 1px #284b60 solid;
+  width: 100%;
+  padding: 1em 0;
+  border-radius: 10px;
+  color: #eee;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .card-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 /* Changing colors for the rest of the cards */
 
 .artists .card:nth-child(2) {
-    background: radial-gradient(
-        rgb(30, 35, 99),
-        rgba(30, 35, 99, 0.5)
-    );
-    border-color: #394b95;
+  background: radial-gradient(
+      rgb(30, 35, 99),
+      rgba(30, 35, 99, 0.5)
+  );
+  border-color: #394b95;
 }
 
 .artists .card:nth-child(2) .profile-img {
-    border-color: rgb(30, 35, 99);
+  border-color: rgb(30, 35, 99);
 }
 
 .artists .card:nth-child(2) .card-btn {
-    border-color: #353165;
+  border-color: #353165;
 }
 
 .artists .card:nth-child(3) {
-    background: radial-gradient(
-        rgb(82, 22, 81),
-        rgba(82, 22, 81, 0.5)
-    );
-    border-color: #bb3bad;
+  background: radial-gradient(
+      rgb(82, 22, 81),
+      rgba(82, 22, 81, 0.5)
+  );
+  border-color: #bb3bad;
 }
 
 .artists .card:nth-child(3) .profile-img {
-    border-color: rgb(82,22,81);
+  border-color: rgb(82,22,81);
 }
 
 .artists .card:nth-child(3) .card-btn {
-    border-color: #552e58;
+  border-color: #552e58;
 }
 
 .artists .card:nth-child(4) {
-    background: radial-gradient(
-        rgb(78, 13, 48),
-        rgba(78, 13, 48, 0.5)
-    );
-    border-color: #b14d44;
+  background: radial-gradient(
+      rgb(78, 13, 48),
+      rgba(78, 13, 48, 0.5)
+  );
+  border-color: #b14d44;
 }
 
 .artists .card:nth-child(4) .profile-img {
-    border-color: rgb(78, 13, 48);
+  border-color: rgb(78, 13, 48);
 }
 
 .artists .card:nth-child(4) .card-btn {
-    border-color: #472847;
+  border-color: #472847;
+}
+.fondocard{
+  margin-top: -50%;
+  margin-left: -10%;
+  width: 120%;
+
+}
+
+@media (max-width:920px) {
+
+
+}
+
+@media (max-width:1500px) {
+ .fondocard{
+  width: 120%;
+ }
+}
+
+#artistinfo{
+  color: white;
+  text-align: center;
+  margin-top: 2%;
+
 }
