@@ -1,101 +1,154 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     const nav = document.getElementById('navbar');
+    nav.appendChild(createMenu());
+    preloadAndSetImage();
+});
+
+function createMenu() {
     const menu = document.createElement('div');
-    const ul = document.createElement('ul');
+    const icono = createMenuIcon();
+    const ul = createMenuList();
+
+    menu.append(icono, ul);
+    setupResponsiveMenu(ul, icono);
+    setupMobileMenu(ul, icono);  // Configura el comportamiento específico para móviles
+
+    return menu;
+}
+
+function createMenuIcon() {
     const icono = document.createElement('div');
-    const logoNTFS = document.createElement('img');
-
-    ul.className = 'menu-list';
-    
-
-
-
-    // Configurar el icono del menú hamburguesa
     icono.textContent = '☰';
-    icono.style.cursor = 'pointer';
-    icono.style.fontSize = '24px';
-    icono.style.userSelect = 'none';
-    
-    // Aplicar estilos básicos a ul
-    ul.style.listStyleType = 'none';
-    ul.style.padding = '0';
-    ul.style.margin = '0';
-    ul.style.display = 'flex';  // Asegura flexibilidad en la disposición de los ítems
-    ul.style.alignItems = 'center';  // Alinea los ítems verticalmente al centro
-    ul.style.justifyContent = 'center';  // Alinea los ítems horizontalmente al centro
-    ul.style.width = '100%';  // Asegura que ul tome todo el ancho disponible
-    ul.style.background = 'linear-gradient(180deg, rgba(2, 0, 36, 1) 27%, rgba(58, 9, 121, 1) 73%, rgba(124, 0, 255, 1) 100%)';
-ul.style.color = 'white'
-    // Añadir los items del menú
-    const items = ['Inicio', 'Explorar', 'Autores', 'Contacto'];
-    items.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = item;
-        li.style.padding = '28px';
-        li.style.borderBottom = '1px solid #ccc';
-        ul.appendChild(li);
+    Object.assign(icono.style, {
+        cursor: 'pointer',
+        fontSize: '24px',
+        userSelect: 'none',
+        display: 'none'  // Ocultar inicialmente, se muestra según media query
+    });
+    return icono;
+}
+
+function createMenuList() {
+    const ul = document.createElement('ul');
+    ul.className = 'menu-list';
+    Object.assign(ul.style, {
+        listStyleType: 'none',
+        padding: 0,
+        margin: 0,
+        display: 'flex', // Ajuste inicial, puede cambiar según la pantalla
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '100%',
+        background: 'linear-gradient(180deg, rgba(2, 0, 36, 1) 27%, rgba(58, 9, 121, 1) 73%, rgba(124, 0, 255, 1) 100%)',
+        color: 'white'
     });
 
-    //Configuracion de la imagen
-    logoNTFS.src = './templates/img/logos/logoNTFS.webp'
-    logoNTFS.style.width = '100px'
-    logoNTFS.style.display = 'none'
+    const items = ['Inicio', 'Explorar', 'Autores', 'Contacto'];
+    items.forEach(item => ul.appendChild(createMenuItem(item)));
 
+    return ul;
+}
 
-    // Añadir elementos al menú
-    menu.appendChild(icono);
-    menu.appendChild(ul);
-    ul.appendChild(logoNTFS);
-    nav.appendChild(menu);
+function createMenuItem(itemText) {
+    const li = document.createElement('li');
+    li.textContent = itemText;
+    li.style.padding = '28px';
+    return li;
+}
 
-    // Manejar la visibilidad del menú según el tamaño de pantalla
-    function updateMenuStyle(e) {
-        if (e.matches) { // Si el ancho de pantalla es mayor a 600px
-            
-            ul.style.display = 'flex';
-            
-            ul.style.justifyContent = 'center';
-            icono.style.display = 'none'; // Ocultar ícono en pantallas grandes
-            ul.style.width = '100%'; // Asegura que el ul tome todo el ancho disponible
-            logoNTFS.style.display = "none"
-        } else {
-            ul.style.backgroundColor = '#0c044c';
-            ul.style.display = 'none'; // Ocultar ul en móviles por defecto
-            icono.style.display = 'flex'; // Mostrar ícono en móviles
-          
-            icono.onclick = function() {
-                ul.style.display = (ul.style.display == 'none') ? 'flex' : 'none';
-                ul.style.height = '100vh';
-                logoNTFS.style.display = (ul.style.display === 'flex') ? 'flex' : 'none';
-                
-            };
-            ul.style.flexDirection = 'column'; // Asegura que los ítems estén en columna en móviles
-            
+function setupResponsiveMenu(ul, icono) {
+    const mediaQuery = window.matchMedia('(min-width: 601px)');
+    mediaQuery.addEventListener('change', () => updateMenuStyle(mediaQuery, ul, icono));
+    updateMenuStyle(mediaQuery, ul, icono);  // Llamar al cargar la página
+}
 
+function setupMobileMenu(ul, icono) {
+    const mediaQueryMobile = window.matchMedia('(max-width: 600px)');
+    mediaQueryMobile.addEventListener('change', (e) => updateMobileMenuStyle(e, ul, icono));
+    updateMobileMenuStyle(mediaQueryMobile, ul, icono);  // Aplicar al cargar la página
+}
+
+function updateMenuStyle(mediaQuery, ul, icono) {
+    if (mediaQuery.matches) {
+        ul.style.display = 'flex';
+        icono.style.display = 'none';
+    } else {
+        ul.style.display = 'none';
+        icono.style.display = 'flex';
+        icono.onclick = () => {
+            ul.style.display = ul.style.display === 'none' ? 'flex' : 'none';
+        };
+    }
+}
+
+function updateMobileMenuStyle(e, ul, icono) {
+    if (e.matches) {
+        // Agregar botón de cierre
+        const closeButton = document.createElement('div');
+        closeButton.textContent = 'X';
+        closeButton.style = {
+            position: 'absolute',
+            top: '10px',
+            right: '10px',
+            fontSize: '24px',
+            cursor: 'pointer',
+            color: 'white',
+        };
+
+        // Estilos específicos para móviles
+        Object.assign(ul.style, {
+            display: 'none', // Ocultar inicialmente hasta que el icono sea clicado
+            flexDirection: 'column', // Elementos en columna
+            justifyContent: 'space-around', // Distribuir elementos uniformemente
+            position: 'absolute', // Posición absoluta para cubrir toda la pantalla
+            top: 0,
+            left: 0,
+            height: '100vh', // Altura de toda la pantalla
+            zIndex: 1000, // Asegurar que el menú está sobre otros elementos
+        });
+
+        ul.prepend(closeButton); // Agregar botón de cierre al principio del menú
+
+        // Funcionalidad para mostrar/ocultar el menú
+        icono.onclick = () => {
+            ul.style.display = ul.style.display === 'none' ? 'flex' : 'none';
+        };
+
+        // Función para cerrar el menú al hacer clic en el botón de cierre
+        closeButton.onclick = () => {
+            ul.style.display = 'none';
+        };
+    } else {
+        // Restablecer estilos para no móviles
+        Object.assign(ul.style, {
+            position: 'static', // Deshacer posición absoluta
+            height: 'auto', // Altura automática
+            flexDirection: 'row', // Elementos en fila
+        });
+
+        // Eliminar el botón de cierre si existe
+        const existingCloseButton = ul.querySelector('div');
+        if (existingCloseButton) {
+            ul.removeChild(existingCloseButton);
         }
     }
-
-    // Crear media query para manejar estilos responsivos
-    const mediaQuery = window.matchMedia('(min-width: 601px)');
-    mediaQuery.addListener(updateMenuStyle);
-    updateMenuStyle(mediaQuery); // Llamar la función al cargar y cada vez que cambie el tamaño de la pantalla
-});
+}
 
 
+function preloadAndSetImage() {
+    const imageUrl = '/templates/img/logos/logoNTFS.webp';
+    fetch(imageUrl)
+        .then(response => response.blob())
+        .then(blob => {
+            const url = URL.createObjectURL(blob);
+            const logoNTFS = document.createElement('img');
+            logoNTFS.src = url;
+            logoNTFS.style.width = '100px';
+            const menu = document.querySelector('.menu-list');
+            menu.appendChild(logoNTFS);
+        })
+        .catch(error => console.error('Error loading the image:', error));
+}
 
-//DETALLES.HTML
 
-// Selección del elemento que activará el zoom al pasar el ratón
-var disparadorDemoDetalles = document.querySelector('.disparadorDemoDetalles');
-
-// Selección del contenedor donde se mostrará la ventana del zoom
-var detalleDetalles = document.querySelector('.detalleDetalles');
-
-// Instancia de Drift para agregar la funcionalidad de zoom
-/*new Drift(disparadorDemoDetalles, {
-  paneContainer: detalleDetalles,
-  inlinePane: false,
-  hoverBoundingBox: true
-});
-*/
 
