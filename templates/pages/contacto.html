@@ -2,22 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
     <title>Contacto</title>
-    
     <link rel="stylesheet" href="../css/contacto.css">
     <link rel="stylesheet" href="../css/footer.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 <body>
-  <header>
-    <nav id="navbar"></nav>
-  
-  </header> 
+    <header>
+        <nav id="navbar"></nav>
+    </header> 
     <main>
         <div class="container">
-            <form >
+            <form>
                 <h1>Formulario de Contacto</h1>
                 <fieldset>
                     <legend>INFORMACIÓN DE CONTACTO</legend>
@@ -33,7 +30,7 @@
                     </div>
                     <div class="input-box">
                         <label for="numero">Telefono
-                            <input type="number" id="numero"  onkeypress="return event.charCode >= 48 && event.charCode <= 57" onwheel="return false;" placeholder="114565856" required>
+                            <input type="number" id="numero" onkeypress="return event.charCode >= 48 && event.charCode <= 57" onwheel="return false;" placeholder="114565856" required>
                         </label>
                     </div>
                     <div class="input-box">
@@ -41,65 +38,56 @@
                             <input type="email" id="email" placeholder="juanperez@gmail.com" required>
                         </label>
                     </div>
-            </fieldset>
+                </fieldset>
                 <div class="input-box">
                     <label for="check"><strong>Enviame Novedades</strong> 
                         <input type="checkbox" class="checkbox" id="check">
                     </label>
                 </div>
-                
                 <div class="btn">
                     <button id="myButton" type="submit"><span>Enviar</span></button>
                 </div>
-            
-
             </form>
         </div>
-
-
     </main>
-
-   
-
     <footer class="footer">
         <div class="container">
-         <div class="row">
-           <div class="footer-col">
-             <h4>Compañía</h4>
-             <ul>
-               <li><a href="#">Sobre Nosotros</a></li>
-               <li><a href="#">Contacto</a></li>
-       
-             </ul>
-           </div>
-           <div class="footer-col">
-             <h4>Pagos</h4>
-             <ul>
-               <li><a href="#">Reintegros</a></li>
-               <li><a href="#">Métodos de Pagos</a></li>
-             </ul>
-           </div>
-           <div class="footer-col">
-             <h4>Tienda</h4>
-             <ul>
-               <li><a href="#">Inicio</a></li>
-               <li><a href="#">Explorar</a></li>
-               <li><a href="#">Autores</a></li>
-               
-             </ul>
-           </div>
-           <div class="footer-col">
-             <h4>Síguenos</h4>
-             <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-               <a href="#"><i class="fab fa-twitter"></i></a>
-               <a href="#"><i class="fab fa-instagram"></i></a>
-               <a href="#"><i class="fab fa-linkedin-in"></i></a>
-             </div>
-           </div>
-         </div>
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Compañía</h4>
+                    <ul>
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Pagos</h4>
+                    <ul>
+                        <li><a href="#">Reintegros</a></li>
+                        <li><a href="#">Métodos de Pagos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Tienda</h4>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Explorar</a></li>
+                        <li><a href="#">Autores</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
-     </footer>
+    </footer>
+    <script src="../js/validaciones.js"></script>
     <script src="../js/script.js"></script>
 </body>
 </html>
