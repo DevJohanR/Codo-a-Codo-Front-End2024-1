@@ -47,6 +47,9 @@ p, span {
     letter-spacing: 1px;
 }
 
+small {
+    color: #eee;
+}
 
  /*styling the middle*/
 .header-body {
@@ -66,6 +69,7 @@ p, span {
 
 h1 {
     font-size: 2em;
+    text-align: center;
 }
 
 .header-body p {
@@ -188,6 +192,7 @@ h1 {
         rgba(5, 38, 93, 0.3)
     );
     position: relative;
+    min-height: 450px;
 }
 
 .featured .art-img {
@@ -363,7 +368,7 @@ h1 {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(6, 1fr);
-    grid-gap: 1em;
+    grid-gap: -10em;
 }
 
 .grid div {
