@@ -390,7 +390,7 @@ header {
   position: relative;
   border: 0.5em rgb(17, 68, 96) solid;
   border-radius: 50vh;
-  margin-top: -8vh;
+  margin-top: -12vh;
   margin-bottom: 1em;
   align-items: center;
 }
@@ -403,20 +403,15 @@ header {
   color: #ffb92d;
 }
 
-.card-btn {
-  background: none;
-  border: 1px #284b60 solid;
-  width: 100%;
-  padding: 1em 0;
-  border-radius: 10px;
-  color: #eee;
-  cursor: pointer;
-  transition: 0.3s;
+.git-btn1{
+  transition: filter 0.3s;
 }
 
-.card-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
+.git-btn1:hover{
+  opacity: 0.8;
 }
+
+
 
 /* Changing colors for the rest of the cards */
 
