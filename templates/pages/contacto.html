@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/contacto.css">
+
+</head>
+
+<body>
+
+
+
+    <div class="container">
+
+
+        <form action="#" class="form" id="formulario">
+
+            <!-- nombre del usuario -->
+            <div class="form_group" id="grupo_nombre">
+
+                <div class="grupo_nombre"></div>
+                <label for="nombre" class="label_form">Nombre</label>
+                <div class="form_group_input">
+                    <input type="text" name="nombre" id="nombre" class="input_form" placeholder="John">
+                    <i class="validate_state fas fa-circle-xmark"></i>
+                </div>
+                <p class="error_input_form">Debe ingresar un <strong>nombre</strong> válido</p>
+
+            </div>
+
+            <!-- apellido del usuario -->
+            <div class="form_group" id="grupo_apellido">
+                <label for="apellido" class="label_form">Apellido</label>
+                <div class="form_group_input">
+                    <input type="text" name="apellido" id="apellido" class="input_form" placeholder="Dee">
+                    <i class="validate_state fas fa-circle-xmark"></i>
+                </div>
+                <p class="error_input_form">Debe ingresar un <strong>apellido</strong> válido</p>
+            </div>
+
+            <!-- DNI del usuario -->
+            <div class="form_group" id="grupo_dni">
+                <label for="dni" class="label_form">D.N.I</label>
+                <div class="form_group_input">
+                    <input type="number" name="dni" id="dni" class="input_form"
+                        onkeypress="return event.charCode >= 48 && event.charCode <= 57" onwheel="return false;"
+                        placeholder="33444555">
+                    <i class="validate_state fas fa-circle-xmark"></i>
+                </div>
+                <p class="error_input_form">Debe ingresar un <strong>DNI</strong> válido</p>
+            </div>
+
+            <!-- teléfono del usuario -->
+            <div class="form_group" id="grupo_telefono">
+                <label for="telefono" class="label_form">Teléfono</label>
+                <div class="form_group_input">
+                    <input type="number" name="telefono" id="telefono" class="input_form"
+                        onkeypress="return event.charCode >= 48 && event.charCode <= 57" onwheel="return false;"
+                        placeholder="115282930">
+                    <i class="validate_state fas fa-circle-xmark"></i>
+                </div>
+                <p class="error_input_form">Debe ingresar un <strong>teléfono</strong> válido</p>
+            </div>
+
+            <!-- correo del usuario -->
+            <div class="form_group" id="grupo_correo">
+                <label for="correo" class="label_form">Email</label>
+                <div class="form_group_input">
+                    <input type="email" name="correo" id="correo" class="input_form" placeholder="correo@correo.com">
+                    <i class="validate_state fas fa-circle-xmark"></i>
+                </div>
+                <p class="error_input_form">Debe ingresar un <strong>email</strong> válido</p>
+            </div>
+
+
+            <!-- check-box enviar correo de novedades -->
+            <div class="form_group_input">
+                <label class="form_label_nov">
+                    <input type="checkbox" name="novedades" id="novedades">
+                    Acepto que me envies novedades
+                </label>
+            </div>
+
+            <!-- Mensaje de error por falta de datos -->
+            <div class="form_mensaje" id="form_mensaje">
+                <p><i class="fa-solid fa-triangle-exclamation"></i> <strong>Error:</strong> Por favor rellene el
+                    formulario correctamente.</p>
+            </div>
+
+            <!-- Boton de enviar formulario -->
+            <div class="form_btn">
+                <button class="btn-hover btn-color" id="myButton" type="submit"><span>Enviar</span></button>
+                <p class="form__exito" id="form_exito">Los datos se enviaron correctamente!!!</p>
+            </div>
+
+
+        </form>
+    </div>
+
+    <footer class="footer">
+        <div class="container-footer">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Compañía</h4>
+                    <ul>
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Pagos</h4>
+                    <ul>
+                        <li><a href="#">Reintegros</a></li>
+                        <li><a href="#">Métodos de Pagos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Tienda</h4>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Explorar</a></li>
+                        <li><a href="#">Autores</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+  
+
+    <script src="../js/scriptcontacto.js"></script>
+    <script src="https://kit.fontawesome.com/a81bcfc588.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
