@@ -10,7 +10,7 @@ body {
     justify-content: flex-end;
     align-items: flex-end;
  
-    background-image: url("../img/img.jpg");
+    background-image: url("../img\\logos/img.jpg");
     min-height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
