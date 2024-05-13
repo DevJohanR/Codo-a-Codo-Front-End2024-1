@@ -137,7 +137,7 @@ function updateMobileMenuStyle(e, ul, icono) {
 
 
 function preloadAndSetImage() {
-    const imageUrl = '/templates/img/logos/logoNTFS.webp';
+    const imageUrl = '/templates/img/logos/logoNTFS.png';
     fetch(imageUrl)
         .then(response => response.blob())
         .then(blob => {
