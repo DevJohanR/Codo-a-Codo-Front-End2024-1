@@ -1,4 +1,4 @@
-//script.js
+
 document.addEventListener('DOMContentLoaded', () => {
     const nav = document.getElementById('navbar');
     nav.appendChild(createMenu());
@@ -9,11 +9,9 @@ function createMenu() {
     const menu = document.createElement('div');
     const icono = createMenuIcon();
     const ul = createMenuList();
-
     menu.append(icono, ul);
     setupResponsiveMenu(ul, icono);
-    setupMobileMenu(ul, icono);  // Configura el comportamiento específico para móviles
-
+    setupMobileMenu(ul, icono);
     return menu;
 }
 
@@ -24,7 +22,7 @@ function createMenuIcon() {
         cursor: 'pointer',
         fontSize: '24px',
         userSelect: 'none',
-        display: 'none'  // Ocultar inicialmente, se muestra según media query
+        display: 'none'
     });
     return icono;
 }
@@ -36,7 +34,7 @@ function createMenuList() {
         listStyleType: 'none',
         padding: 0,
         margin: 0,
-        display: 'flex', // Ajuste inicial, puede cambiar según la pantalla
+        display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         width: '100%',
@@ -44,15 +42,23 @@ function createMenuList() {
         color: 'white'
     });
 
-    const items = ['Inicio', 'Explorar', 'Autores', 'Contacto'];
+    const items = [
+        { text: 'Inicio', href: '/index.html' },
+        { text: 'Explorar', href: '/templates/pages/explorar.html' },
+        { text: 'Autores', href: '/templates/pages/autor.html' },
+        { text: 'Contacto', href: '/templates/pages/contacto.html' }
+    ];
     items.forEach(item => ul.appendChild(createMenuItem(item)));
 
     return ul;
 }
 
-function createMenuItem(itemText) {
+function createMenuItem(item) {
     const li = document.createElement('li');
-    li.textContent = itemText;
+    const a = document.createElement('a');
+    a.textContent = item.text;
+    a.href = item.href;
+    li.appendChild(a);
     li.style.padding = '28px';
     return li;
 }
@@ -60,13 +66,13 @@ function createMenuItem(itemText) {
 function setupResponsiveMenu(ul, icono) {
     const mediaQuery = window.matchMedia('(min-width: 601px)');
     mediaQuery.addEventListener('change', () => updateMenuStyle(mediaQuery, ul, icono));
-    updateMenuStyle(mediaQuery, ul, icono);  // Llamar al cargar la página
+    updateMenuStyle(mediaQuery, ul, icono);
 }
 
 function setupMobileMenu(ul, icono) {
     const mediaQueryMobile = window.matchMedia('(max-width: 600px)');
     mediaQueryMobile.addEventListener('change', (e) => updateMobileMenuStyle(e, ul, icono));
-    updateMobileMenuStyle(mediaQueryMobile, ul, icono);  // Aplicar al cargar la página
+    updateMobileMenuStyle(mediaQueryMobile, ul, icono);
 }
 
 function updateMenuStyle(mediaQuery, ul, icono) {
@@ -84,7 +90,6 @@ function updateMenuStyle(mediaQuery, ul, icono) {
 
 function updateMobileMenuStyle(e, ul, icono) {
     if (e.matches) {
-        // Agregar botón de cierre
         const closeButton = document.createElement('div');
         closeButton.textContent = 'X';
         closeButton.style = {
@@ -96,45 +101,39 @@ function updateMobileMenuStyle(e, ul, icono) {
             color: 'white',
         };
 
-        // Estilos específicos para móviles
         Object.assign(ul.style, {
-            display: 'none', // Ocultar inicialmente hasta que el icono sea clicado
-            flexDirection: 'column', // Elementos en columna
-            justifyContent: 'space-around', // Distribuir elementos uniformemente
-            position: 'absolute', // Posición absoluta para cubrir toda la pantalla
+            display: 'none',
+            flexDirection: 'column',
+            justifyContent: 'space-around',
+            position: 'absolute',
             top: 0,
             left: 0,
-            height: '100vh', // Altura de toda la pantalla
-            zIndex: 1000, // Asegurar que el menú está sobre otros elementos
+            height: '100vh',
+            zIndex: 1000,
         });
 
-        ul.prepend(closeButton); // Agregar botón de cierre al principio del menú
+        ul.prepend(closeButton);
 
-        // Funcionalidad para mostrar/ocultar el menú
         icono.onclick = () => {
             ul.style.display = ul.style.display === 'none' ? 'flex' : 'none';
         };
 
-        // Función para cerrar el menú al hacer clic en el botón de cierre
         closeButton.onclick = () => {
             ul.style.display = 'none';
         };
     } else {
-        // Restablecer estilos para no móviles
         Object.assign(ul.style, {
-            position: 'static', // Deshacer posición absoluta
-            height: 'auto', // Altura automática
-            flexDirection: 'row', // Elementos en fila
+            position: 'static',
+            height: 'auto',
+            flexDirection: 'row',
         });
 
-        // Eliminar el botón de cierre si existe
         const existingCloseButton = ul.querySelector('div');
         if (existingCloseButton) {
             ul.removeChild(existingCloseButton);
         }
     }
 }
-
 
 function preloadAndSetImage() {
     const imageUrl = '/templates/img/logos/logoNTFS.png';
@@ -147,9 +146,5 @@ function preloadAndSetImage() {
             logoNTFS.style.width = '100px';
             const menu = document.querySelector('.menu-list');
             menu.appendChild(logoNTFS);
-        })
-        .catch(error => console.error('Error loading the image:', error));
+        });
 }
-
-
-

@@ -1,94 +1,48 @@
 section {
-    height: 100vh;
-    width: 100%;
-    background: url(../img/logos/indexFondo.webp) no-repeat center center; /* Centers the background and ensures it doesn't repeat */
-    background-size: cover; /* Cover ensures the entire section is covered */
+    color: white;
 }
 
-.containerWelcome{
-   
-    height: 100vh;
-    width: 100%;
+.welcome-section {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+    background: url(../img/logos/indexFondo.webp) no-repeat center center;
+    background-size: cover;
+}
+.action-buttons{
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    
 }
 
-.boxWelcome1, .boxWelcome2, .boxWelcome3, .boxWelcome4 {
-    width: 500px;
-    height: 300px;
-    min-width: 500px; /* Asegura que las cajas no se reduzcan más de este tamaño */
+.action-buttons h1 {
+    cursor: pointer;
+    animation: neonTextGlow 2s linear infinite;
 }
 
-@keyframes neonGlow {
-    0% { box-shadow: 0 0 10px #ff0000; }
-    25% { box-shadow: 0 0 10px #00ff00; }
-    50% { box-shadow: 0 0 10px #0000ff; }
-    75% { box-shadow: 0 0 10px #ff00ff; }
-    100% { box-shadow: 0 0 10px #ff0000; }
+@keyframes neonTextGlow {
+    from { text-shadow: 0 0 10px #fff; }
+    to { text-shadow: 0 0 20px #ff0, 0 0 30px #f0f, 0 0 40px #0ff; }
 }
 
-
-.separador{
-    position: absolute;
+@media (max-width: 1500px) {
+    .action-buttons h1 { font-size: 48px; }
 }
 
-.boxWelcome1{
-  
- display: flex;
- align-items: flex-end;
+@media (max-width: 1024px) {
+    .welcome-section { flex-direction: column; }
 }
 
-.boxWelcome1 p{
-  
-    display: flex;
-    align-items: flex-end;
-    color: white;
-    width: 350px;
-    min-width: 100px; 
-    margin-left: 125px;
-    background-color: rgba(0, 0, 0, 0.363);
-   }
-
-.boxWelcome2{
-    display: flex;
-    align-items: flex-end;
-   
-}
-.boxWelcome2 h1{
-   font-size: 60px;
-   color: white;
-   margin-left: 15px;
-   
+@media (max-width: 920px) {
+    .action-buttons h1 { font-size: 36px; }
 }
 
-.boxWelcome3{
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
+@media (max-width: 600px) {
+    .welcome-section {
+        padding: 20px;
+        background-size: contain;
+    }
 }
-
-.boxWelcome3 h1{
-    font-size: 60px;
-    color: white;
-    margin-right: 25px;
-}
-
-.boxWelcome4{
-    
-}
-
-.boxWelcome4 p{
-    display: flex;
-align-items: flex-end;
-color: white;
-width: 350px;
-min-width: 100px;
-margin-left: 20px;
-background-color: rgba(0, 0, 0, 0.363);
-}
-
-
-
