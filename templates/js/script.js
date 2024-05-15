@@ -135,7 +135,7 @@ function updateMobileMenuStyle(e, ul, icono) {
         }
     }
 }
-
+/*
 function preloadAndSetImage() {
     const imageUrl = './templates/img/logos/logoNTFS.png';
     
@@ -145,6 +145,23 @@ function preloadAndSetImage() {
             
             // const url = URL.createObjectURL(blob);
             
+            const logoNTFS = document.createElement('img');
+            logoNTFS.src = imageUrl;
+            logoNTFS.style.width = '100px';
+            const menu = document.querySelector('.menu-list');
+            menu.appendChild(logoNTFS);
+        });
+}
+*/
+function preloadAndSetImage() {
+    // Determinar la profundidad de la ruta y ajustar la ruta del logo
+    const pathDepth = document.location.pathname.split('/').length - 1;
+    const imageUrl = `${'../'.repeat(pathDepth - 1)}templates/img/logos/logoNTFS.png`;
+
+    fetch(imageUrl)
+        .then(response => response.blob())
+        .then(blob => {
+            // const url = URL.createObjectURL(blob); // Esta línea está comentada, parece no utilizarse.
             const logoNTFS = document.createElement('img');
             logoNTFS.src = imageUrl;
             logoNTFS.style.width = '100px';
