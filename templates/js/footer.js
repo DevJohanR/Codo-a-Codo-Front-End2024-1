@@ -7,7 +7,7 @@ footer.innerHTML=`
             <h4>Compañía</h4>
             <ul>
                 <li><a href="#">Sobre Nosotros</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a href="/templates/pages/contacto.html">Contacto</a></li>
             </ul>
         </div>
         <div class="footer-col">
@@ -20,9 +20,9 @@ footer.innerHTML=`
         <div class="footer-col">
             <h4>Tienda</h4>
             <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Explorar</a></li>
-                <li><a href="#">Autores</a></li>
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/templates/pages/explorar.html">Explorar</a></li>
+                <li><a href="/templates/pages/autor.html">Autores</a></li>
             </ul>
         </div>
         <div class="footer-col">

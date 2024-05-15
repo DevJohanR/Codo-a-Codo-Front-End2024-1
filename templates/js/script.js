@@ -59,8 +59,11 @@ function createMenuItem(item) {
     const a = document.createElement('a');
     a.textContent = item.text;
     a.href = item.href;
+    a.style.textDecoration="none";
+    a.style.color="#ddd";
     li.appendChild(a);
     li.style.padding = '28px';
+    
     return li;
 }
 
@@ -111,7 +114,12 @@ function updateMobileMenuStyle(e, ul, icono) {
             left: 0,
             height: '100vh',
             zIndex: 1000,
+            
         });
+
+
+       
+
 
         ul.prepend(closeButton);
 
