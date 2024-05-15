@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const nav = document.getElementById('navbar');
     nav.appendChild(createMenu());
+    
     preloadAndSetImage();
 });
 
@@ -136,13 +137,16 @@ function updateMobileMenuStyle(e, ul, icono) {
 }
 
 function preloadAndSetImage() {
-    const imageUrl = '/templates/img/logos/logoNTFS.png';
+    const imageUrl = './templates/img/logos/logoNTFS.png';
+    
     fetch(imageUrl)
         .then(response => response.blob())
         .then(blob => {
-            const url = URL.createObjectURL(blob);
+            
+            // const url = URL.createObjectURL(blob);
+            
             const logoNTFS = document.createElement('img');
-            logoNTFS.src = url;
+            logoNTFS.src = imageUrl;
             logoNTFS.style.width = '100px';
             const menu = document.querySelector('.menu-list');
             menu.appendChild(logoNTFS);

@@ -25,7 +25,9 @@ body {
 
 }
 
-
+header {
+    min-width: 100%;
+}
 .container {
     max-width: 800px;
     width: 100%;
