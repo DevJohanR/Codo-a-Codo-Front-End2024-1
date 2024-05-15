@@ -75,6 +75,7 @@ h1, h2 {
 }
 
 
+
 .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columnas por defecto */
@@ -127,22 +128,7 @@ h1, h2 {
     z-index: 2; /* Mismo z-index que la imagen para estar en la parte superior */
 }
 
-.neon-button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-bottom: 20px;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    z-index: 2; /* Asegurando que el botón también esté sobre el efecto de luz */
-    background-color: #48fc8b; /* Botón verde neón por defecto */
-}
 
-.neon-button:hover {
-    background-color: #3ae374; /* Tono más oscuro al pasar el mouse */
-}
 
 /* Media query para pantallas de hasta 600px de ancho */
 @media (max-width: 600px) {
@@ -180,3 +166,57 @@ h1, h2 {
     filter: drop-shadow(0 0 0.7em #8ef10c);
 }
 
+
+/* ------------- Styles Button ---------- */
+.form_btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom:20px;
+}
+
+.form_btn button {
+    align-items: center;
+    background: rgb(36,86,0);
+    background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    font-family: Phantomsans, sans-serif;
+    font-size: 20px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 140px;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+
+}
+
+
+.form_btn button:active,
+.form_btn button:hover {
+    outline: 0;
+
+}
+
+.form_btn button span {
+    background-color: rgb(23, 12, 39);
+    padding: 16px 24px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: .8s ease all;
+}
+
+.form_btn button:hover span {
+    background: none;
+}
